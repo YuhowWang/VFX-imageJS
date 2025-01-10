@@ -1,0 +1,172 @@
+:root {
+    --primary-color: var(--primary-color, #4D698E);
+    --body-bg: var(--body-bg, #ffffff);
+    --text-color: var(--text-color, #333333);
+}
+
+.main-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.category-section {
+    margin-bottom: 40px;
+}
+
+.category-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: var(--body-bg);
+}
+
+.subcategory-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 15px 10px;
+    padding-left: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.2px;
+    padding: 5px 5px 20px 5px;
+}
+
+.image-item {
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+    width: 220px;
+    height: 220px;
+    margin: 0;
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.image-item:hover .hover-overlay {
+    opacity: 1;
+}
+
+.download-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.download-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 响应式设计 */
+@media (max-width: 1400px) {
+    .image-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.2px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .image-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.2px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.2px;
+    }
+    
+    .category-nav {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.2px;
+    }
+}
+
+/* 顶部导航栏样式 */
+.top-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding: 15px 0;
+    background: var(--body-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    color: var(--primary-color);
+    background: rgba(var(--primary-color-rgb), 0.1);
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+    background: rgba(var(--primary-color-rgb), 0.15);
+}
+
+/* 内容区域样式 */
+.content-area {
+    min-height: 500px;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 100px 20px;
+    color: var(--text-color);
+}
+
+.welcome-message h1 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+} 
